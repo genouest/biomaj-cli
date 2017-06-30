@@ -1,3 +1,5 @@
+3.1.7:
+  If no arg given, display help
 3.1.6:
   Add options --last-log and --tail to get last log of a bank, needs biomaj-daemon >= 3.0.8
 3.1.5:
