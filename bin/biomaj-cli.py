@@ -5,6 +5,7 @@ import argparse
 import logging
 import getpass
 import requests
+import datetime
 
 from biomaj_cli.utils import Utils
 from biomaj_cli.utils import Options
@@ -146,6 +147,9 @@ def main():
 
     --maintenance on/off/status: (un)set biomaj in maintenance mode to prevent updates/removal
 
+    --schedule: Get bank scheduling (needs biomaj-release)
+        [MANDATORY]
+        --proxy http://x.y.z
         ''')
         return
 
@@ -179,6 +183,19 @@ def main():
             headers = {}
             if options.apikey:
                 headers = {'Authorization': 'APIKEY ' + options.apikey}
+
+            if options.schedule:
+                r = requests.get(proxy + '/api/release/schedule', headers=headers)
+                if not r.status_code == 200:
+                    print('Failed to contact schedule service')
+                    sys.exit(1)
+                schedule = r.json()
+                for bank in schedule['schedule']:
+                    sched_next = 'not planned'
+                    if bank['next'] is not None:
+                        sched_next = datetime.datetime.fromtimestamp(bank['next'])
+                    print(bank['name'] + ': ' + str(sched_next))
+                sys.exit(0)
 
             if options.lastlog:
                 if not options.bank:

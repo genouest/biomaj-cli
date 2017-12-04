@@ -1,3 +1,5 @@
+3.1.8:
+  Add option --schedule
 3.1.7:
   If no arg given, display help
 3.1.6:
