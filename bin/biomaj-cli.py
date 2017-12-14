@@ -150,7 +150,10 @@ def main():
     --schedule: Get bank scheduling (needs biomaj-release)
         [MANDATORY]
         --proxy http://x.y.z
+
+    --stats: Get statistics
         ''')
+
         return
 
     proxy = options.proxy

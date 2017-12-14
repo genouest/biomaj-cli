@@ -1,3 +1,5 @@
+3.1.9:
+  Add option --stats
 3.1.8:
   Add option --schedule
 3.1.7:

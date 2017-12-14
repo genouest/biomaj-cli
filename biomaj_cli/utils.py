@@ -80,3 +80,4 @@ class Utils(object):
         parser.add_argument('--version', dest="version", help="Show version", action="store_true", default=False)
         parser.add_argument('--status-ko', dest="statusko", help="Get bank in KO status", action="store_true", default=False)
         parser.add_argument('--schedule', dest="schedule", help="Get bank schedule", action="store_true", default=False)
+        parser.add_argument('--stats', dest="stats", help="Get statistics", action="store_true", default=False)
