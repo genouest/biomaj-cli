@@ -6,6 +6,7 @@ import logging
 import getpass
 import requests
 import datetime
+import json
 
 from biomaj_cli.utils import Utils
 from biomaj_cli.utils import Options
@@ -181,7 +182,13 @@ def main():
             from biomaj_daemon.daemon.utils import biomaj_client_action
             options.user = getpass.getuser()
             BiomajConfig.load_config(options.config)
-            (status, msg) = biomaj_client_action(options)
+            status = False
+            msg = None
+            try:
+                (status, msg) = biomaj_client_action(options)
+            except Exception as e:
+                status = False
+                msg = str(e)
         else:
             headers = {}
             if options.apikey:
@@ -219,14 +226,21 @@ def main():
             result = r.json()
             status = result['status']
             msg = result['msg']
-        if not status:
-            print('An error occured:\n')
-            print(str(msg))
+
+        if options.json:
+            if not status:
+                print(json.dumps({'error': str(msg)}))
+            else:
+                print(json.dumps(msg))
         else:
-            if msg:
+            if not status:
+                print('An error occured:\n')
                 print(str(msg))
             else:
-                print('Done.')
+                if msg:
+                    print(str(msg))
+                else:
+                    print('Done.')
     except Exception as e:
         logging.exception(e)
         print('Error:' + str(e))

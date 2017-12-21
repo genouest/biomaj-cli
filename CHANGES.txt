@@ -1,5 +1,6 @@
 3.1.9:
   Add option --stats
+  Add option --json
 3.1.8:
   Add option --schedule
 3.1.7:
