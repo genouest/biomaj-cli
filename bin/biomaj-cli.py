@@ -153,6 +153,8 @@ def main():
         --proxy http://x.y.z
 
     --stats: Get statistics
+
+    --json: Get output in JSON format
         ''')
 
         return
