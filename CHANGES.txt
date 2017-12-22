@@ -1,6 +1,6 @@
 3.1.9:
-  Add option --stats
-  Add option --json
+  Add option --stats, needs biomaj-daemon >= 3.0.13
+  Add option --json, needs biomaj-daemon >= 3.0.13
 3.1.8:
   Add option --schedule
 3.1.7:
