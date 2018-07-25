@@ -152,6 +152,10 @@ def main():
         [MANDATORY]
         --proxy http://x.y.z
 
+    --history: Get biomaj update/remove history
+        [OPTIONAL]
+        --history-limit xx : number of elements to return
+
     --stats: Get statistics
 
     --json: Get output in JSON format

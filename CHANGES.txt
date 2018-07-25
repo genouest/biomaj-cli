@@ -1,3 +1,5 @@
+3.1.10:
+  Add --history option
 3.1.9:
   Add option --stats, needs biomaj-daemon >= 3.0.13
   Add option --json, needs biomaj-daemon >= 3.0.13
