@@ -28,7 +28,7 @@ class Utils(object):
     @staticmethod
     def set_args(parser):
         parser.add_argument('--history', dest="history", action="store_true", default=False, help="Get biomaj update/remove history")
-        parser.add_argument('--history-limit', type=int, dest="historyLimit", default=100, help="Number of elements to return")
+        parser.add_argument('--history-limit', type=int, dest="historyLimit", default=20, help="Number of elements to return")
 
         parser.add_argument('--last-log', dest="lastlog", action="store_true", default=False, help="Get last logs for bank")
         parser.add_argument('--tail', dest="tail", help="number of lines to tail")
