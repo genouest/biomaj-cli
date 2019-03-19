@@ -85,3 +85,5 @@ class Utils(object):
         parser.add_argument('--schedule', dest="schedule", help="Get bank schedule", action="store_true", default=False)
         parser.add_argument('--stats', dest="stats", help="Get statistics", action="store_true", default=False)
         parser.add_argument('--json', dest="json", help="Get result in JSON format", action="store_true", default=False)
+        parser.add_argument('--data-list', dest="datalist", help="List available bank templates (needs biomaj-data package)", action="store_true", default=False)
+        parser.add_argument('--data-import', dest="dataimport", help="Import a bank template, with --bank (needs biomaj-data package)", action="store_true", default=False)

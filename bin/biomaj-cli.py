@@ -159,6 +159,15 @@ def main():
     --stats: Get statistics
 
     --json: Get output in JSON format
+
+    --data-list: List available bank templates
+      [MANDATORY]
+      biomaj-data package
+
+    --data-import: Import a bank template
+      [MANDATORY]
+      biomaj-data package
+      --bank xx : template name
         ''')
 
         return
