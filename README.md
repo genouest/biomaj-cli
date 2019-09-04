@@ -2,6 +2,8 @@
 
 Package to use BioMAJ providing biomaj-cli
 
+[![PyPI version](https://badge.fury.io/py/biomaj-cli.svg)](https://badge.fury.io/py/biomaj-cli)
+
 # Example
 
     biomaj-cli.py --proxy http://biomaj-public-proxy --api-key XYZ_MYAPIKEY --update --bank Anopheles_gambiae
